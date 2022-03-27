@@ -1,0 +1,42 @@
+﻿@model VideoControl.ViewModels.AllVideosViewModel
+
+@{
+    ViewData["Title"] = "Top Videos";
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                <h3>Title</h3>
+            </th>
+            <th>
+                <h3>Auther</h3>
+            </th>
+            <th>
+                <h3>URL</h3>
+            </th>
+            <th>
+                <h3>Views</h3>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Videos) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                <a href="#">@Html.DisplayFor(modelItem => item.Url)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Views)
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
